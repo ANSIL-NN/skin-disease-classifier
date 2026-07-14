@@ -83,11 +83,18 @@ Then open `http://127.0.0.1:8000/docs` to test via Swagger UI.
 }
 ```
 
+## Live API
+Base URL: `https://skin-disease-classifier-production.up.railway.app`
+
+- `GET /health` — server status
+- `POST /predict` — upload image, get prediction
+- `GET /docs` — interactive Swagger UI
+
 ## Status
 
 - [x] Data preprocessing and augmentation
 - [x] Model training (transfer learning, 3-phase fine-tuning)
 - [x] Evaluation (confusion matrix, classification report)
 - [x] FastAPI inference endpoint
-- [ ] Docker + Railway deployment (in progress)
-- [ ] SwiftUI iOS app
+- [x] Docker + Railway deployment(live)
+- [ ] SwiftUI iOS app(in progress)
