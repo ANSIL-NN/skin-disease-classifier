@@ -65,9 +65,29 @@ pip install -r requirements.txt
 
 See `train.ipynb` / `train.py` for the full training pipeline.
 
+## API
+
+Run the inference server:
+```bash
+uvicorn main:app --reload
+```
+Then open `http://127.0.0.1:8000/docs` to test via Swagger UI.
+
+**Endpoint:** `POST /predict` — upload a dermoscopy image, returns:
+```json
+{
+  "disease": "Melanoma",
+  "code": "mel", 
+  "confidence": 69.3,
+  "top3": [...]
+}
+```
+
 ## Status
 
 - [x] Data preprocessing and augmentation
 - [x] Model training (transfer learning, 3-phase fine-tuning)
 - [x] Evaluation (confusion matrix, classification report)
-- [ ] FastAPI inference endpoint (in progress)
+- [x] FastAPI inference endpoint
+- [ ] Docker + Railway deployment (in progress)
+- [ ] SwiftUI iOS app
