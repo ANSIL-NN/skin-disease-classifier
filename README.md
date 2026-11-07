@@ -111,7 +111,7 @@ A native iOS client that sends images to the live API and displays the result.
 - [x] Evaluation (confusion matrix, classification report)
 - [x] FastAPI inference endpoint
 - [x] Docker + Railway deployment(live)
-- [x] SwiftUI iOS app(in progress)
+- [x] SwiftUI iOS app
 
 ## Future Work
 - Grad-CAM heatmaps to visualize what the model focuses on
