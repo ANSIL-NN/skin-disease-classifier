@@ -90,6 +90,20 @@ Base URL: `https://skin-disease-classifier-production.up.railway.app`
 - `POST /predict` — upload image, get prediction
 - `GET /docs` — interactive Swagger UI
 
+## iOS App (SwiftUI)
+
+A native iOS client that sends images to the live API and displays the result.
+
+### Features
+
+- Pick a photo from the library (PhotosPicker) or capture one with the camera
+- Image is resized/compressed on-device before upload
+- Multipart upload to /predict using async/await and URLSession
+- Result card with predicted disease, confidence bar, top-3 predictions, and a short description
+- High-concern classes (mel, bcc, akiec) are highlighted with a "see a dermatologist" warning
+- Live server status indicator (via /health)
+- Medical disclaimer shown in-app
+
 ## Status
 
 - [x] Data preprocessing and augmentation
@@ -97,4 +111,10 @@ Base URL: `https://skin-disease-classifier-production.up.railway.app`
 - [x] Evaluation (confusion matrix, classification report)
 - [x] FastAPI inference endpoint
 - [x] Docker + Railway deployment(live)
-- [ ] SwiftUI iOS app(in progress)
+- [x] SwiftUI iOS app(in progress)
+
+## Future Work
+- Grad-CAM heatmaps to visualize what the model focuses on
+- On-device inference with Core ML (offline mode)
+- Improve melanoma recall/precision with a larger or external dataset
+- Prediction history and export in the app
